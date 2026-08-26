@@ -1,0 +1,1373 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Courier New", monospace;
+  background: #008080;
+  color: #111;
+  overflow: hidden;
+}
+
+button {
+  font-family: inherit;
+}
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+.os-desktop {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background:
+    linear-gradient(
+      135deg,
+      #008b8b 0%,
+      #007878 45%,
+      #006b6b 100%
+    );
+
+  position: relative;
+}
+
+
+/* =========================
+   TOP MENU BAR
+========================= */
+
+.os-menubar {
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 12px;
+
+  background: #d4d0c8;
+
+  border-bottom: 2px solid #000;
+
+  font-size: 13px;
+
+  user-select: none;
+
+  z-index: 10;
+}
+
+.os-menu-left,
+.os-menu-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.os-logo {
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #000080;
+  color: white;
+
+  font-weight: bold;
+}
+
+.os-menu-left span {
+  cursor: default;
+}
+
+.os-menu-right {
+  gap: 14px;
+  font-size: 12px;
+}
+
+
+/* =========================
+   DESKTOP AREA
+========================= */
+
+.desktop-area {
+  position: relative;
+
+  flex: 1;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   DESKTOP ICONS
+========================= */
+
+.desktop-icons {
+  position: absolute;
+
+  top: 28px;
+  left: 24px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+
+  z-index: 2;
+}
+
+.desktop-icon {
+  width: 80px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 4px;
+
+  border: none;
+  background: transparent;
+
+  color: white;
+
+  font-size: 12px;
+
+  text-shadow:
+    1px 1px 0 #000;
+
+  cursor: pointer;
+}
+
+.desktop-icon:hover {
+  background: rgba(0, 0, 128, 0.45);
+}
+
+.desktop-icon:focus {
+  outline: 1px dotted white;
+}
+
+.icon-image {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+
+  background: #d4d0c8;
+
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+
+  box-shadow:
+    1px 1px 0 #000;
+}
+
+
+/* =========================
+   WINDOWS
+========================= */
+
+.os-window {
+  position: absolute;
+
+  background: #d4d0c8;
+
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+
+  box-shadow:
+    3px 3px 0 rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================
+   WELCOME WINDOW
+========================= */
+
+.welcome-window {
+  width: min(720px, 72vw);
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+
+/* =========================
+   TITLE BAR
+========================= */
+
+.window-titlebar {
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 4px;
+
+  background: #000080;
+  color: white;
+
+  font-size: 13px;
+  font-weight: bold;
+
+  user-select: none;
+}
+
+.window-titlebar > span {
+  flex: 1;
+
+  padding-left: 5px;
+}
+
+.window-controls,
+.window-buttons {
+  display: flex;
+  gap: 3px;
+}
+
+.window-titlebar button {
+  width: 20px;
+  height: 20px;
+
+  padding: 0;
+
+  background: #d4d0c8;
+
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+
+  font-size: 14px;
+  line-height: 14px;
+
+  cursor: pointer;
+}
+
+.window-titlebar button:active {
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+
+
+/* =========================
+   WINDOW CONTENT
+========================= */
+
+.window-content {
+  padding: 34px 42px 30px;
+
+  background: #d4d0c8;
+}
+
+.welcome-label {
+  font-size: 11px;
+  color: #555;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.window-content h1 {
+  margin: 8px 0 4px;
+  font-family: "Courier New", monospace;
+  font-size: 42px;
+  font-weight: bold;
+  letter-spacing: 0;
+  color: #111;
+  text-align: center;
+}
+
+.window-content h2 {
+  margin: 0 0 12px;
+  font-family: "Courier New", monospace;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+.window-content > p {
+  margin: 0;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #111;
+  text-align: center;
+}
+
+.system-divider {
+  height: 2px;
+
+  margin: 28px 0;
+
+  background: #808080;
+
+  border-top: 1px solid #fff;
+}
+
+.system-info {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+.system-info div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.system-info span {
+  font-size: 10px;
+  color: #666;
+}
+
+.system-info strong {
+  font-size: 13px;
+}
+
+.welcome-description {
+  max-width: 570px;
+
+  margin-top: 28px !important;
+
+  line-height: 1.6;
+
+  font-size: 13px !important;
+}
+
+
+/* =========================
+   STATUS BAR
+========================= */
+
+.window-statusbar {
+  height: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 8px;
+
+  border-top: 2px solid #808080;
+
+  font-size: 11px;
+
+  color: #333;
+}
+
+
+/* =========================
+   TASKBAR
+========================= */
+
+.os-taskbar {
+  position: relative;
+  overflow: visible;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 3px 5px;
+
+  background: #d4d0c8;
+
+  border-top: 2px solid #fff;
+
+  box-shadow:
+    0 -1px 0 #000;
+
+  z-index: 10;
+}
+
+.start-button {
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 0 10px 0 6px;
+
+  background: #d4d0c8;
+
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+
+  cursor: pointer;
+
+  font-size: 12px;
+}
+
+.start-button:active {
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+
+.start-logo {
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #000080;
+  color: white;
+
+  font-weight: bold;
+}
+
+.taskbar-divider {
+  width: 2px;
+  height: 28px;
+
+  border-left: 1px solid #808080;
+  border-right: 1px solid #fff;
+}
+
+.taskbar-item {
+  height: 30px;
+
+  min-width: 220px;
+
+  padding: 0 12px;
+
+  text-align: left;
+
+  background: #d4d0c8;
+
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+.taskbar-item.active {
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+
+  background: #c0bdb5;
+}
+
+.taskbar-spacer {
+  flex: 1;
+}
+
+.system-tray {
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 10px;
+
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+  .os-menu-left span:nth-child(n + 4) {
+    display: none;
+  }
+
+  .os-menu-right span:first-child {
+    display: none;
+  }
+
+  .desktop-icons {
+    left: 10px;
+    top: 15px;
+
+    gap: 12px;
+  }
+
+  .welcome-window {
+    width: calc(100vw - 120px);
+  }
+
+.window-content {
+  padding: 30px 42px 26px;
+  background: #d4d0c8;
+  color: #111;
+}
+
+  .system-info {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .taskbar-item {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .system-tray span:first-child,
+  .system-tray span:nth-child(2) {
+    display: none;
+  }
+
+  .system-tray {
+    padding: 0 7px;
+  }
+}
+
+/* =========================
+   START BUTTON
+========================= */
+
+.start-button {
+  position: relative;
+
+  min-width: 110px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 3px 10px;
+
+  background: #d4d0c8;
+
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+
+  font-family: "Courier New", monospace;
+
+  cursor: pointer;
+
+  z-index: 1000;
+}
+
+.start-button:active,
+.start-button.pressed {
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+.start-logo {
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #000080;
+
+  color: white;
+
+  font-weight: bold;
+}
+
+
+/* =========================
+   START MENU
+========================= */
+
+.start-menu {
+  position: absolute;
+
+  left: 0;
+  bottom: 34px;
+
+  width: 320px;
+
+  background: #d4d0c8;
+
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.35);
+
+  z-index: 9999;
+
+  font-family: "Courier New", monospace;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.start-menu-header {
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px;
+
+  background: #000080;
+
+  color: white;
+}
+
+.start-menu-logo {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: white;
+
+  color: #000080;
+
+  border: 2px solid #808080;
+
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.start-menu-header div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.start-menu-header strong {
+  font-size: 15px;
+}
+
+.start-menu-header small {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+
+/* =========================
+   MENU ITEMS
+========================= */
+
+.start-menu-body {
+  padding: 5px;
+}
+
+.start-menu-item-wrapper {
+  position: relative;
+}
+
+.start-menu-item {
+  width: 100%;
+  color: #111;
+  min-height: 54px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 6px 8px;
+
+  border: none;
+
+  background: transparent;
+
+  font-family: "Courier New", monospace;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.start-menu-item > span:first-child {
+  width: 30px;
+
+  font-size: 21px;
+
+  text-align: center;
+}
+
+.start-menu-item > div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  flex: 1;
+}
+
+.start-menu-item strong {
+  font-size: 13px;
+}
+
+.start-menu-item small {
+  color: #555;
+
+  font-size: 10px;
+}
+
+.start-menu-item:hover,
+.start-menu-item.selected {
+  background: #000080;
+
+  color: white;
+}
+
+.start-menu-item:hover small,
+.start-menu-item.selected small {
+  color: #d0d0d0;
+}
+
+.menu-arrow {
+  width: auto !important;
+
+  font-size: 11px !important;
+}
+
+.start-submenu {
+  position: absolute;
+
+  left: 100%;
+  top: 0;
+
+  width: 270px;
+
+  padding: 5px;
+
+  background: #d4d0c8;
+
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+
+  box-shadow:
+    4px 4px 0 rgba(0, 0, 0, 0.35);
+
+  z-index: 10000;
+}
+
+.submenu-title {
+  padding: 7px 8px;
+
+  background: #000080;
+
+  color: white;
+
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.start-submenu button {
+  width: 100%;
+
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 5px 8px;
+
+  border: none;
+
+  background: transparent;
+
+  font-family: "Courier New", monospace;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.start-submenu button > span {
+  width: 28px;
+
+  font-size: 19px;
+
+  text-align: center;
+}
+
+.start-submenu button div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.start-submenu button strong {
+  font-size: 12px;
+}
+
+.start-submenu button small {
+  color: #555;
+
+  font-size: 9px;
+}
+
+.start-submenu button:hover {
+  background: #000080;
+
+  color: white;
+}
+
+.start-submenu button:hover small {
+  color: #d0d0d0;
+}
+
+/* =========================
+   SEPARATOR
+========================= */
+
+.start-menu-separator {
+  height: 2px;
+
+  margin: 5px 2px;
+
+  border-top: 1px solid #808080;
+  border-bottom: 1px solid white;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.start-menu-footer {
+  display: flex;
+
+  border-top: 2px solid #808080;
+
+  padding: 5px;
+}
+
+.start-menu-footer button {
+  flex: 1;
+
+  padding: 7px 4px;
+
+  border: none;
+
+  background: transparent;
+
+  font-family: "Courier New", monospace;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+.start-menu-footer button:hover {
+  background: #000080;
+
+  color: white;
+}
+
+/* =========================
+   RETRO PIXEL DESKTOP ICONS
+========================= */
+
+.icon-image.pixel-icon {
+  position: relative;
+  width: 48px;
+  height: 42px;
+  margin: 0 auto 5px;
+  image-rendering: pixelated;
+}
+
+/* ---------- COMPUTER ---------- */
+
+.icon-computer .computer-screen {
+  position: absolute;
+  left: 4px;
+  top: 2px;
+  width: 38px;
+  height: 27px;
+  background: #c0c0c0;
+  border: 3px solid #000;
+  box-shadow:
+    inset 3px 3px #ffffff,
+    inset -3px -3px #404040;
+}
+
+.icon-computer .computer-screen::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 25px;
+  height: 15px;
+  background: #000080;
+}
+
+.icon-computer .computer-stand {
+  position: absolute;
+  left: 17px;
+  top: 30px;
+  width: 14px;
+  height: 6px;
+  background: #c0c0c0;
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+}
+
+.icon-computer .computer-stand::after {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 5px;
+  width: 26px;
+  height: 4px;
+  background: #c0c0c0;
+  border: 2px solid #000;
+}
+
+
+/* ---------- USER ---------- */
+
+.icon-user .user-head {
+  position: absolute;
+  left: 17px;
+  top: 2px;
+  width: 14px;
+  height: 14px;
+  background: #c0c0c0;
+  border: 3px solid #000;
+}
+
+.icon-user .user-body {
+  position: absolute;
+  left: 8px;
+  top: 19px;
+  width: 32px;
+  height: 19px;
+  background: #c0c0c0;
+  border: 3px solid #000;
+  border-bottom: 5px solid #000;
+}
+
+
+/* ---------- AI CHIP ---------- */
+
+.icon-chip {
+  background: #c0c0c0;
+  border: 3px solid #000;
+  box-shadow:
+    inset 3px 3px #fff,
+    inset -3px -3px #404040;
+}
+
+.icon-chip::before,
+.icon-chip::after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  width: 5px;
+  height: 24px;
+  background: #404040;
+}
+
+.icon-chip::before {
+  left: -7px;
+}
+
+.icon-chip::after {
+  right: -7px;
+}
+
+.chip-core {
+  position: absolute;
+  left: 9px;
+  top: 9px;
+  width: 24px;
+  height: 18px;
+  background: #000080;
+  color: white;
+  font-family: "Courier New", monospace;
+  font-size: 9px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ---------- CHART ---------- */
+
+.icon-chart span {
+  position: absolute;
+  bottom: 4px;
+  width: 6px;
+  background: #000080;
+  border: 2px solid #000;
+}
+
+.icon-chart span:nth-child(1) {
+  left: 3px;
+  height: 12px;
+}
+
+.icon-chart span:nth-child(2) {
+  left: 13px;
+  height: 20px;
+}
+
+.icon-chart span:nth-child(3) {
+  left: 23px;
+  height: 28px;
+}
+
+.icon-chart span:nth-child(4) {
+  left: 33px;
+  height: 36px;
+}
+
+
+/* ---------- GYM ---------- */
+
+.icon-gym .bar {
+  position: absolute;
+  left: 7px;
+  top: 18px;
+  width: 34px;
+  height: 6px;
+  background: #404040;
+  border: 2px solid #000;
+}
+
+.icon-gym .weight {
+  position: absolute;
+  top: 8px;
+  width: 9px;
+  height: 26px;
+  background: #c0c0c0;
+  border: 3px solid #000;
+}
+
+.icon-gym .weight.left {
+  left: 2px;
+}
+
+.icon-gym .weight.right {
+  right: 2px;
+}
+
+
+/* ---------- DOCUMENT ---------- */
+
+.icon-document {
+  background: #fff;
+  border: 3px solid #000;
+  box-shadow:
+    3px 3px 0 #404040;
+}
+
+.icon-document::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-left: 10px solid transparent;
+  border-top: 10px solid #808080;
+}
+
+.document-lines {
+  position: absolute;
+  left: 8px;
+  top: 16px;
+  width: 26px;
+  height: 3px;
+  background: #000080;
+  box-shadow:
+    0 7px #000080,
+    0 14px #000080;
+}
+
+
+/* ---------- MAIL ---------- */
+
+.icon-mail {
+  background: #fff;
+  border: 3px solid #000;
+  box-shadow:
+    inset 3px 3px #fff,
+    inset -3px -3px #808080;
+}
+
+.icon-mail::before,
+.icon-mail::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 3px;
+  height: 27px;
+  background: #000;
+}
+
+.icon-mail::before {
+  left: 12px;
+  transform: rotate(-48deg);
+}
+
+.icon-mail::after {
+  right: 12px;
+  transform: rotate(48deg);
+}
+
+.desktop-icon {
+  font-family: "Courier New", monospace;
+  color: #000;
+}
+
+.desktop-icon:hover {
+  background: transparent;
+}
+
+.desktop-icon:focus {
+  outline: 1px dotted #000;
+  outline-offset: 2px;
+}
+
+.desktop-icon span {
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+/* =========================
+   SHUTDOWN SCREEN
+========================= */
+
+.shutdown-screen {
+  position: fixed;
+  inset: 0;
+
+  z-index: 99999;
+
+  background: #000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Courier New", monospace;
+  color: #fff;
+
+  animation: shutdownFadeIn 0.7s ease-out forwards;
+}
+
+@keyframes shutdownFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.shutdown-screen.turning-on {
+  animation: shutdownFadeOut 0.7s ease-in forwards;
+}
+
+@keyframes shutdownFadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.shutdown-box {
+  text-align: center;
+
+  animation: powerContentIn 0.9s ease-out 0.2s both;
+}
+
+@keyframes powerContentIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.shutdown-box {
+  text-align: center;
+}
+
+.shutdown-logo {
+  width: 54px;
+  height: 54px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #000080;
+
+  border: 3px solid #fff;
+
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.shutdown-title {
+  font-size: 20px;
+  font-weight: bold;
+
+  margin-bottom: 8px;
+}
+
+.shutdown-status {
+  font-size: 12px;
+
+  color: #aaa;
+
+  margin-bottom: 28px;
+}
+
+.power-on-button {
+  padding: 7px 18px;
+
+  background: #c0c0c0;
+
+  color: #000;
+
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  font-weight: bold;
+
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+
+  cursor: pointer;
+}
+
+.power-on-button:active {
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+
+/* =========================
+   GITHUB DESKTOP ICON
+========================= */
+
+.github-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #d4d0c8;
+
+  border-top: 3px solid #ffffff;
+  border-left: 3px solid #ffffff;
+
+  border-right: 3px solid #000000;
+  border-bottom: 3px solid #000000;
+
+  box-shadow:
+    2px 2px 0 #404040;
+
+  image-rendering: pixelated;
+}
+
+.github-icon svg {
+  display: block;
+
+  width: 38px;
+  height: 38px;
+
+  shape-rendering: crispEdges;
+}

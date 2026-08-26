@@ -1,0 +1,195 @@
+.app-window {
+  position: absolute;
+
+  width: 620px;
+  max-width: calc(100vw - 180px);
+
+  left: 0;
+  top: 0;
+
+  background: #d4d0c8;
+
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+
+  box-shadow:
+     4px 4px 0 #404040;
+
+  /*
+   * Important:
+   * React controls the transform while dragging.
+   */
+  margin: 0;
+}
+
+.app-window.maximized {
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: none;
+
+  transform: none !important;
+
+  box-shadow: none;
+}
+
+
+/* =========================
+   TITLE BAR
+========================= */
+
+.app-window .window-titlebar {
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 4px;
+
+  background: #000080;
+
+  color: white;
+
+  font-size: 13px;
+  font-weight: bold;
+
+  user-select: none;
+
+  cursor: grab;
+}
+
+.app-window .window-titlebar:active {
+  cursor: grabbing;
+}
+
+.window-title {
+  flex: 1;
+
+  padding-left: 5px;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.app-window .window-buttons {
+  display: flex;
+
+  gap: 3px;
+}
+
+.app-window .window-buttons button {
+  width: 20px;
+  height: 20px;
+
+  padding: 0;
+
+  background: #d4d0c8;
+
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+
+  font-family: "Courier New", monospace;
+
+  font-size: 13px;
+  font-weight: bold;
+
+  line-height: 16px;
+
+  cursor: pointer;
+}
+
+.app-window .window-buttons button {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.app-window .window-buttons button:active {
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.app-window-content {
+  font-size: 13px;
+  line-height: 1.6;
+  min-height: 220px;
+
+  padding: 16px;
+
+  background: #d4d0c8;
+
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+
+  overflow: auto;
+}
+
+.maximized .app-window-content {
+  height: calc(100% - 53px);
+}
+
+
+/* =========================
+   STATUS BAR
+========================= */
+
+.app-window .window-statusbar {
+  min-height: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 6px;
+
+  border-top: 2px solid #808080;
+
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+
+  color: #333;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .app-window {
+    width: calc(100vw - 100px);
+
+    max-width: none;
+  }
+
+  .app-window.maximized {
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,364 @@
+/* =========================
+   RESUME WINDOW
+========================= */
+
+.resume-window-content {
+  background: #d4d0c8;
+  color: #111;
+  font-family: "Courier New", monospace;
+  min-height: 320px;
+}
+
+/* =========================
+   TABS
+========================= */
+
+.resume-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 12px;
+
+  /* definite spacing between every control */
+  gap: 8px;
+}
+
+.resume-tabs .resume-tab {
+  flex: 0 0 auto;
+
+  margin: 0;
+  padding: 5px 10px;
+
+  background: #d4d0c8;
+
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  line-height: 12px;
+
+  color: #111;
+
+  cursor: pointer;
+}
+
+.resume-tabs .resume-tab.active {
+  background: #d4d0c8;
+
+  border-bottom-color: #d4d0c8;
+
+  position: relative;
+  z-index: 2;
+}
+
+.resume-tabs .resume-tab:active {
+  border-top-color: #404040;
+  border-left-color: #404040;
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+
+/* =========================
+   DOWNLOAD RESUME
+========================= */
+
+.resume-tabs .resume-download {
+  flex: 0 0 auto;
+
+  margin: 0 0 0 10px;
+  padding: 5px 11px;
+
+  background: #d4d0c8;
+
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 12px;
+
+  color: #111;
+
+  cursor: pointer;
+}
+
+.resume-tabs .resume-download:active {
+  border-top-color: #404040;
+  border-left-color: #404040;
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+/* =========================
+   PROFILE HEADER
+========================= */
+
+.resume-profile-heading {
+  text-align: center;
+  margin: 8px 0 12px;
+}
+
+.resume-profile-heading h1 {
+  margin: 0 0 6px;
+
+  font-family: "Courier New", monospace;
+  font-size: 20px;
+  font-weight: bold;
+
+  letter-spacing: 0;
+  color: #111;
+}
+
+.resume-profile-heading h2 {
+  margin: 0;
+
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  font-weight: bold;
+
+  color: #111;
+}
+
+
+/* =========================
+   PROFILE INFORMATION
+========================= */
+
+.resume-info {
+  width: 100%;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  column-gap: 35px;
+  row-gap: 12px;
+
+  padding: 12px 18px;
+
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+
+  font-size: 11px;
+}
+
+
+/* Individual property */
+
+.resume-info-item {
+  display: grid;
+  grid-template-columns: 75px 1fr;
+
+  align-items: start;
+
+  min-width: 0;
+}
+
+
+/* Property name */
+
+.resume-info-item span {
+  color: #555;
+  white-space: nowrap;
+}
+
+
+/* Property value */
+
+.resume-info-item strong {
+  color: #111;
+  font-weight: normal;
+
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+
+/* Online status */
+
+.resume-online {
+  color: #000080 !important;
+  font-weight: bold !important;
+}
+
+.resume-summary {
+  margin: 0;
+
+  text-align: center;
+
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  line-height: 1.6;
+
+  color: #111;
+}
+
+/* =========================
+   DIVIDERS
+========================= */
+
+.resume-divider {
+  height: 1px;
+
+  margin: 16px 0;
+
+  background: #808080;
+}
+
+
+/* =========================
+   SECTION TITLES
+========================= */
+
+.resume-section-title {
+  margin-bottom: 15px;
+
+  color: #000080;
+
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+.resume-meta {
+  margin-top: 5px;
+
+  color: #555;
+
+  font-size: 12px;
+}
+
+.resume-list {
+  margin: 0;
+  padding-left: 20px;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+.resume-list li {
+  margin-bottom: 7px;
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.resume-project h2 {
+  margin: 0 0 5px;
+
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.resume-project span {
+  color: #555;
+
+  font-size: 11px;
+}
+
+.resume-project p {
+  margin: 9px 0 0;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.resume-skill-grid {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 135px 1fr;
+
+  row-gap: 12px;
+  column-gap: 18px;
+
+  font-size: 11px;
+}
+
+
+/* Each skill row */
+
+.resume-skill-grid > div {
+  display: contents;
+}
+
+
+/* Category */
+
+.resume-skill-grid span {
+  color: #555;
+  text-align: right;
+  padding-right: 8px;
+  white-space: nowrap;
+}
+
+
+/* Skill values */
+
+.resume-skill-grid strong {
+  color: #111;
+  font-weight: normal;
+  line-height: 1.5;
+
+  text-align: left;
+
+  overflow-wrap: break-word;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .resume-tabs {
+    overflow-x: auto;
+  }
+
+  .resume-tab {
+    min-width: 82px;
+    font-size: 9px;
+  }
+
+  .resume-tab-content {
+    padding: 18px;
+  }
+
+  .resume-skill-grid {
+    grid-template-columns: 110px 1fr;
+  }
+
+  .resume-actionbar {
+    gap: 5px;
+  }
+
+  .resume-actionbar > div {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+}

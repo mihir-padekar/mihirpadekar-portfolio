@@ -1,0 +1,443 @@
+.projects-app {
+  width: 100%;
+  font-size: 13px;
+  font-family: "Courier New", monospace;
+
+  color: #111;
+}
+
+
+/* =========================
+   ADDRESS BAR
+========================= */
+
+.projects-address-bar {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  margin-bottom: 6px;
+}
+
+.address-label {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.address-input {
+  flex: 1;
+
+  min-height: 25px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 3px 7px;
+
+  background: white;
+
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+
+  font-size: 11px;
+}
+
+.address-go {
+  height: 25px;
+
+  padding: 0 10px;
+
+  background: #d4d0c8;
+
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+
+  font-family: inherit;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   TOOLBAR
+========================= */
+
+.projects-toolbar {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 4px;
+
+  border-top: 1px solid #808080;
+  border-bottom: 1px solid #ffffff;
+
+  margin-bottom: 8px;
+}
+
+.projects-toolbar button {
+  min-width: 28px;
+  height: 23px;
+  padding: 2px 7px;
+  box-sizing: border-box;
+
+  background: #d4d0c8;
+
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+.projects-toolbar button:active {
+  border-top-color: #404040;
+  border-left-color: #404040;
+
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+.toolbar-divider {
+  width: 1px;
+
+  height: 20px;
+
+  margin: 0 4px;
+
+  background: #808080;
+}
+
+
+/* =========================
+   MAIN AREA
+========================= */
+
+.projects-main {
+  min-height: 300px;
+  display: grid;
+  grid-template-columns: 38% 62%;
+
+  background: white;
+
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+
+/* =========================
+   FILE LIST
+========================= */
+
+.projects-file-list {
+  border-right: 2px solid #808080;
+
+  overflow-y: auto;
+}
+
+.file-list-header {
+  display: grid;
+  grid-template-columns: 28px 1fr 55px;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 7px;
+  box-sizing: border-box;
+
+  padding: 5px 7px;
+
+  background: #d4d0c8;
+
+  border-bottom: 1px solid #808080;
+
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.project-file {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) 55px;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 7px;
+  box-sizing: border-box;
+
+  border: none;
+
+  background: white;
+
+  font-family: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.project-file:hover {
+  background: #dce6ff;
+}
+
+.project-file.selected {
+  background: #000080;
+
+  color: white;
+}
+
+.project-folder {
+  font-size: 18px;
+
+  text-align: center;
+}
+
+.project-name {
+  font-size: 13px;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+.project-type {
+  font-size: 11px;
+}
+
+
+/* =========================
+   DETAILS
+========================= */
+
+.project-details {
+  font-size: 13px;
+  padding: 14px 18px;
+  overflow-y: auto;
+  box-sizing: border-box;
+
+}
+
+.project-empty {
+  min-height: 260px;
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 48px;
+
+  margin-bottom: 10px;
+}
+
+.project-empty h3 {
+  margin: 0 0 6px;
+
+  font-size: 16px;
+}
+
+.project-empty p {
+  margin: 0;
+
+  font-size: 11px;
+
+  color: #555;
+}
+
+
+/* =========================
+   PROJECT INFO
+========================= */
+
+.project-info-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.large-folder {
+  font-size: 40px;
+}
+
+.project-info-header h2 {
+  margin: 0 0 3px;
+
+  font-size: 20px;
+}
+
+.project-info-header span {
+  font-size: 10px;
+
+  color: #555;
+}
+
+.project-info-divider {
+  height: 1px;
+
+  margin: 15px 0;
+
+  background: #808080;
+}
+
+.project-field {
+  margin-bottom: 18px;
+}
+
+.project-field strong {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-size: 13px;
+
+  color: #000080;
+}
+
+.project-field p {
+  margin: 0;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+.tech-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 5px;
+}
+
+.tech-list span {
+  padding: 3px 6px;
+
+  background: #d4d0c8;
+
+  border: 1px solid #808080;
+
+  font-size: 11px;
+}
+
+.project-status {
+  font-weight: bold;
+}
+
+
+/* =========================
+   STATUS BAR
+========================= */
+
+.projects-status {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 4px;
+
+  padding: 4px 7px;
+
+  border-top: 1px solid #808080;
+
+  font-size: 9px;
+}
+
+.projects-app {
+  color: #111 !important;
+}
+
+.projects-app h2,
+.projects-app h3,
+.projects-app p,
+.projects-app span,
+.projects-app strong,
+.projects-app button {
+  color: #111;
+}
+
+.project-actions {
+  margin-top: 20px;
+}
+
+.project-actions button {
+  padding: 6px 14px;
+
+  background: #d4d0c8;
+
+  color: #111;
+
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.project-actions button:active {
+  border-top-color: #404040;
+  border-left-color: #404040;
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+}
+
+.project-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.project-actions button {
+  padding: 6px 14px;
+
+  background: #d4d0c8;
+  color: #111;
+
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.project-actions button:active {
+  border-top-color: #404040;
+  border-left-color: #404040;
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
