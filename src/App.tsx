@@ -74,22 +74,25 @@ const launchFromStart = (name: WindowName) => {
   setStartMenuOpen(false)
 }
 
- const shutdownSystem = () => {
+const shutdownAudio = new Audio("/sounds/shutdown.mp3")
+const startupAudio = new Audio("/sounds/startup.mp3")
+
+shutdownAudio.volume = 0.8
+startupAudio.volume = 0.8
+
+const shutdownSystem = () => {
   setStartMenuOpen(false)
   setProgramsMenuOpen(false)
 
-  const audio = new Audio("/sounds/shutdown.mp3")
-
-  audio.volume = 0.8
-  audio.play().catch(() => {})
+  shutdownAudio.currentTime = 0
+  shutdownAudio.play().catch(() => {})
 
   setIsShuttingDown(true)
 }
 
 const startSystem = () => {
-  const audio = new Audio("/sounds/startup.mp3")
-  audio.volume = 0.8
-  audio.play().catch(() => {})
+  startupAudio.currentTime = 0
+  startupAudio.play().catch(() => {})
 
   setIsTurningOn(true)
 
