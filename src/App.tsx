@@ -78,7 +78,7 @@ const launchFromStart = (name: WindowName) => {
   setStartMenuOpen(false)
   setProgramsMenuOpen(false)
 
-  const audio = new Audio("src/public/sounds/shutdown.mp3")
+  const audio = new Audio("/sounds/shutdown.mp3")
 
   audio.volume = 0.8
   audio.play().catch(() => {})
@@ -87,7 +87,7 @@ const launchFromStart = (name: WindowName) => {
 }
 
 const startSystem = () => {
-  const audio = new Audio("src/public/sounds/startup.mp3")
+  const audio = new Audio("/sounds/startup.mp3")
   audio.volume = 0.8
   audio.play().catch(() => {})
 
