@@ -120,7 +120,7 @@ const startSystem = () => {
     setNextZIndex((current) => current + 1)
   }
 
-  const getWindowTitle = (name: WindowName) => {
+  const getWindowTitle = (name: WindowName): string => {
     switch (name) {
       case "about":
         return "About Me - MihirOS"
@@ -133,6 +133,9 @@ const startSystem = () => {
 
       case "contact":
         return "Contact - MihirOS"
+
+      default:
+      return "MIHIR_OS"
     }
   }
 
